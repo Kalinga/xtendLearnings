@@ -10,7 +10,6 @@ public class FoldMethodUsage {
 	
 	String foldedStrUppercase = fold.foldItWithUpperCase(name);
 	System.out.println(foldedStrUppercase);
-	
 	}
 
 }
