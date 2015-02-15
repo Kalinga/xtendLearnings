@@ -16,5 +16,6 @@ class Map {
 		println ("mapItWithFirstUpperAndPrint(String str)")
 		println (str.split(" ").iterator.map([s| s.toFirstUpper + " "]).join)
 	}	
+	//TODO:	More stuff in lambda
 	
 }
