@@ -1,4 +1,4 @@
-package example_flatten;
+package iterableExtensions;
 
 import java.util.ArrayList
 import java.util.Calendar
@@ -95,12 +95,14 @@ class FlattenMethodUsage {
 		println ("invertedMap.keys: " + invertedMap.keySet)
 		println ("invertedMap value for 'String5': " + invertedMap.get("String5")+ "\n")
 		
-				
+		var map = flattenedList.toMap([toUpperCase])
+		println ("map.values: " + map)
+						
 		var cal = Calendar.getInstance();
-		var map = cal.getDisplayNames(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH)
-		System.out.println(map);
+		var calMap = cal.getDisplayNames(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH)
+		System.out.println(calMap);
 		
-		var treeMap = new TreeMap(map)
-		System.out.println(treeMap);		
+		var treeMap = new TreeMap(calMap)
+		System.out.println(treeMap);
 	}	
 }
