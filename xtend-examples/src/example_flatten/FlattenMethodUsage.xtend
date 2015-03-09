@@ -48,7 +48,7 @@ class FlattenMethodUsage {
 		anotherListOfString.add("String1")
 		anotherListOfString.add("String2")
 		anotherListOfString.add("")
-		anotherListOfString.add("String3")
+		anotherListOfString.add("ThirdString")
 		anotherListOfString.add("String4")
 		anotherListOfString.add(null)
 		anotherListOfString.add("String5")		
@@ -73,22 +73,34 @@ class FlattenMethodUsage {
 		while (it.hasNext()) {
 			System.out.println(it.next());
 		}	
+		
 		var count = 0
-		while (flattenedList.iterator.hasNext) {
-			println ("flattenedList element" + count + ":" + flattenedList.iterator.next)
+		var iterator = flattenedList.iterator
+		while (iterator.hasNext) {
+			println ("flattenedList element" + count + ":" + iterator.next)
 			count = count + 1
 		}
-			
+		
+		flattenedList.forEach ([println(it)])
+		
+		println("flattenedList Join: " + flattenedList.join)
+		println("flattenedList Join: " + flattenedList.join("Results...", ",",".", [it.toUpperCase])+ "\n")
+		
+		println("flattenedList reduce: " + flattenedList.reduce([x,y| x.toUpperCase + " " + y.toLowerCase]) + "\n")
+		
+		println("flattenedList toSet: " + flattenedList.toSet().size + "\n")
+		
+		var invertedMap = flattenedList.toInvertedMap([length])
+		println ("invertedMap.values: " + invertedMap.values)
+		println ("invertedMap.keys: " + invertedMap.keySet)
+		println ("invertedMap value for 'String5': " + invertedMap.get("String5")+ "\n")
+		
 				
 		var cal = Calendar.getInstance();
 		var map = cal.getDisplayNames(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH)
 		System.out.println(map);
 		
 		var treeMap = new TreeMap(map)
-		System.out.println(treeMap);
-		
-		
-		
-		//TODO: Realize a situation where you can use 'flatten'
+		System.out.println(treeMap);		
 	}	
 }
